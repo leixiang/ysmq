@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>ysmq-server</artifactId>
+
+    <name>ysmq-server</name>
+    <packaging>war</packaging>
+
+    <parent>
+        <groupId>com.nsyun</groupId>
+        <artifactId>ysmq</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+       <!-- Compile -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<!-- To build an executable war use one of the profiles below -->
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- oauth -->
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+        </dependency>
+		
+		<!-- JPA -->
+       <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>activemq-all</artifactId>
+		    <version>${activemq.version}</version>
+		</dependency>
+		 
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>${hibernate-c3p0.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+			
+            
+		 <dependency>
+			<groupId>net.coobird</groupId>
+			<artifactId>thumbnailator</artifactId>
+			<version>0.4.8</version>
+		</dependency>
+		
+    </dependencies>
+
+   <build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
